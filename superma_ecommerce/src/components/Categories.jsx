@@ -1,3 +1,4 @@
+import { colors } from '@material-ui/core';
 import React from 'react'
 import styled from 'styled-components'
 import {categories} from "../data";
@@ -14,7 +15,7 @@ export const Categories = () => {
     <Container>
         {
             categories.map(item=>(
-                <CategoryItem item={item}/>
+                <CategoryItem item={item} key={item.id}/>
             ))
         }
     </Container>
