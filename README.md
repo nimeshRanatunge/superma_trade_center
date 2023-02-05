@@ -4,7 +4,6 @@ full web app for superma trade center ganemulla, for more details, refer Documen
 #tasks
 Frontend and Backend tasks - Nimesh Ranatunge, Waruna Prabashwara
 Documentation - Gayasha Siribaddana
-Bug fixing - Sandun Mihiranga
 
 #Technologies
 React
