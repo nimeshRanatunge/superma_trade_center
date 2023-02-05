@@ -9,7 +9,7 @@ const Container = styled.div`
     justify-content: space-between;
 `
 
-export const Products = () => {
+const Products = () => {
   return (
     <Container>
         {
@@ -20,3 +20,4 @@ export const Products = () => {
     </Container>
   )
 }
+export default Products;
