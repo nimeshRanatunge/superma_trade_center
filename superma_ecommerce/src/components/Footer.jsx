@@ -1,9 +1,11 @@
 import { Facebook, Instagram, MailOutline, Phone, Room, Twitter, YouTube } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
+  ${mobile({ flexDirection: "column" })}
 `;
 const Logo = styled.h1`
     
@@ -34,10 +36,12 @@ const Left = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ display: "none" })}
 `;
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ backgroundColor: "#fff8f8" })}
 `;
 const Title = styled.h3`
 margin-bottom: 30px;
@@ -106,7 +110,7 @@ const Footer = () => {
         <Title>Contact</Title>
         <ContactItem><Room style={{marginRight: "10px"}}/>56/A, Main Road, Ganemulla.</ContactItem>
         <ContactItem><Phone style={{marginRight: "10px"}}/>033 2260 144</ContactItem>
-        <ContactItem><MailOutline style={{marginRight: "10px"}}/>contact@superma.lk</ContactItem>
+        <ContactItem><MailOutline style={{marginRight: "10px"}}/>contact@superma.lkk</ContactItem>
         <Payment src={require("../assets/we_accept.png")}/>
       </Right>
     </Container>

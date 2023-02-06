@@ -3,12 +3,14 @@ import Footer from '../components/Footer';
 import Announcement from '../components/Announcement'
 import Navbar from '../components/Navbar'
 import styled from 'styled-components';
+import { Add, Remove } from '@material-ui/icons';
+import { mobile } from "../responsive";
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 20px;
-
+  ${mobile({ padding: "10px" })}
 `;
 
 const Title = styled.h1`
@@ -34,7 +36,7 @@ const TopButton = styled.button`
 `;
 
 const TopTexts = styled.div`
- 
+   ${mobile({ display: "none" })}
 `;
 const TopText = styled.span`
   text-decoration: underline;
@@ -45,6 +47,7 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: "column" })}
  
 `;
 
@@ -55,7 +58,7 @@ const Info = styled.div`
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
-  
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const ProductDetail = styled.div`
@@ -104,13 +107,13 @@ const ProductAmountContainer = styled.div`
 const ProductAmount = styled.div`
   font-size: 24px;
   margin: 5px;
-  
+  ${mobile({ margin: "5px 15px" })}
 `;
 
 const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
-  
+  ${mobile({ marginBottom: "20px" })}
 `;
 
 const Hr = styled.hr`
@@ -158,8 +161,81 @@ const Cart = () => {
         <Navbar/>
         <Wrapper>
             <Title>YOUR BAG</Title>
-            <Top></Top>
-            <Bottom></Bottom>
+            <Top>
+              <TopButton>CONTINUE SHOPPING</TopButton>
+              <TopTexts>
+                <TopText>Shopping Bag(2)</TopText>
+                <TopText>Your Wishlist (0)</TopText>
+              </TopTexts>
+              <TopButton type="filled">CHECKOUT NOW</TopButton>
+            </Top>
+            <Bottom>
+              <Info>
+                <Product>
+                  <ProductDetail>
+                    <Image src={require("../assets/testItem/pngwing.com (7).png")}/>
+                    <Details>
+                      <ProductName><b>Product:WAVES SHOES LIMITED</b></ProductName>
+                      <ProductId><b>ID</b> 83475983478573</ProductId>
+                      <ProductColor color='black'/>
+                      <ProductSize><b>Size:</b> 37.3</ProductSize>
+                    </Details>
+                  </ProductDetail>
+                  <PriceDetail>
+                    <ProductAmountContainer>
+                      <Add/>
+                      <ProductAmount>2</ProductAmount>
+                      <Remove/>
+                    </ProductAmountContainer>
+                    <ProductPrice>LKR 1000</ProductPrice>
+                  </PriceDetail>
+                </Product>
+                <Hr/>
+                <Product>
+                  <ProductDetail>
+                    <Image src={require("../assets/testItem/pngwing.com (8).png")}/>
+                    <Details>
+                      <ProductName><b>Product:WAVES SHOES LIMITED</b></ProductName>
+                      <ProductId><b>ID</b> 83475983478573</ProductId>
+                      <ProductColor color='black'/>
+                      <ProductSize><b>Size:</b> 37.3</ProductSize>
+                    </Details>
+                  </ProductDetail>
+                  <PriceDetail>
+                    <ProductAmountContainer>
+                      <Add/>
+                      <ProductAmount>2</ProductAmount>
+                      <Remove/>
+                    </ProductAmountContainer>
+                    <ProductPrice>LKR 1000</ProductPrice>
+                  </PriceDetail>
+                  
+                </Product>
+
+
+              </Info>
+              <Summary>
+                <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+                <SummaryItem>
+                  <SummaryItemText>Subtotal</SummaryItemText>
+                  <SummaryItemPrice>LKR 800</SummaryItemPrice>
+                </SummaryItem>
+                <SummaryItem>
+                  <SummaryItemText>ESTIMTED SHIPPNG</SummaryItemText>
+                  <SummaryItemPrice>LKR 800</SummaryItemPrice>
+                </SummaryItem>
+                <SummaryItem>
+                  <SummaryItemText>SHIPNG DISCOUNT</SummaryItemText>
+                  <SummaryItemPrice>LKR 800</SummaryItemPrice>
+                </SummaryItem>
+                <SummaryItem type="total">
+                  <SummaryItemText>TOTAL</SummaryItemText>
+                  <SummaryItemPrice>LKR 800</SummaryItemPrice>
+                </SummaryItem>
+                <Button>CHECKOUT NOW</Button>
+              </Summary>
+             
+            </Bottom>
         </Wrapper>
         <Footer/>
     </Container>
