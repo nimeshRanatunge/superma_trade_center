@@ -20,7 +20,6 @@ const UserSchema = new mongoose.Schema(
             type: Boolean,
             default: false,
         },
-        createAt: Date
     },
     {timestamps: true} //by mongoose its used to create automatically createdAt, updatedAt 
 )
