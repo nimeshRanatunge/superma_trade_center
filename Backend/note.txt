@@ -1,0 +1,8 @@
+doeenv library- hide secret keys, stuff
+eg: stripe payment - provide secret key for identification, if dont hide secret key , everybody can create a payment operation and charge your users
+
+express - to create rest api
+mongoose - using mongodb, crud operations
+dotenv - *
+nodemon - hot reload
+
