@@ -3,8 +3,7 @@ full web app for superma trade center ganemulla, for more details, refer Documen
 
 #tasks
 Frontend and Backend tasks - Nimesh Ranatunge, 
-Mobile Responsivenes - Waruna Prabashwara,
-Ui design adobe XD - Gayasha Siribaddana
+
 
 #Technologies
 React
