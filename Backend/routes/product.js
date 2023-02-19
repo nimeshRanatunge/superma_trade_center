@@ -70,9 +70,12 @@ router.get("/", async (req, res) => {
         categories: {
           $in: [qCategory], // example : get details about M size t shirts which its titles are nike and reborn
         },
+       
       });
+      console.log("products" + products)
     } else {
       products = await Product.find();
+      
     }
 
     res.status(200).json(products);

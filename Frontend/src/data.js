@@ -26,17 +26,20 @@ export const categories = [
     {
         id: 1,
         img: require("./assets/favpng_t-shirt-amazon-com-clothing-unisex.png"),
-        title: "SHIRT STYLE!"
+        title: "SHIRT STYLE!",
+        cat:"women"
     },
     {
         id: 2,
         img: require("./assets/favpng_printed-t-shirt-amazon-com-clothing.png"),
-        title: "SHIRT STYLE!!"
+        title: "SHIRT STYLE!!",
+        cat:"coat"
     },
     {
         id: 3,
         img: require("./assets/favpng_t-shirt-amazon-com-puma-brand-fashion.png"),
-        title: "SHIRT STYLE!!"
+        title: "SHIRT STYLE!!",
+        cat:"jeans"
     }
 ]
 

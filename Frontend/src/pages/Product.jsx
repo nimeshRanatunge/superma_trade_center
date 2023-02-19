@@ -5,6 +5,10 @@ import Announcement from "../components/Announcement";
 import Navbar from "../components/Navbar";
 import NewsLetter from "../components/NewsLetter";
 import { mobile } from "../responsive";
+import { useLocation } from "react-router-dom";
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { publicRequest } from "../requestMethods";
 
 const Container = styled.div`
     
@@ -102,28 +106,44 @@ const Amount = styled.span`
     margin: 0px 5px;
 `
 
-
-
 const Product = () => {
+
+    const location = useLocation();
+    const id = location.pathname.split("/")[2];
+    console.log(id)
+    const [product, setProduct] = useState({});
+
+    useEffect(() => {
+        const getProduct = async () => {
+          try {
+            const res = await publicRequest.get("/products/find/"+id)
+            setProduct(res.data);
+          } catch {}
+        };
+        getProduct();
+      }, [id]);
+
   return (
     <Container>
         <Announcement/>
         <Navbar/>
         <Wrapper>
             <ImgContainer>
-                <Image src={require("../assets/testItem/pngwing.com (1).png")}/>
+                <Image src={product.img}/>
             </ImgContainer>
             <InfoContainer>
-                <Title>Super Shoee</Title>
-                <Desc>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio rem adipisci necessitatibus repel
-                    lat! Tempora dolor, natus et, saepe ratione neque quasi qui dolorem architecto modi magnam dolorum, cumque molestias sapiente.</Desc>
-                <Price>LKR 200</Price>
+                <Title>{product.title}</Title>
+                <Desc>{product.desc}</Desc>
+                <Price>LKR {product.price}</Price>
                 <FilterContainer>
                     <Filter>
                         <FilterTitle>Color</FilterTitle>
-                        <FilterColor color="black"/>
-                        <FilterColor color="darkBlue"/>
-                        <FilterColor color="gray"/>
+                        {
+                            product.color.map((c)=>(
+                                <FilterColor color={c} key={c}/>
+                            ))
+                        }
+                       
                     </Filter>
                     <Filter>
                     <FilterTitle>Size</FilterTitle>
